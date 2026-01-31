@@ -1,0 +1,768 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edith Karanja | Full-Stack Web Developer & Innovator</title>
+    <meta name="description" content="Professional full-stack web developer building impactful digital products that simplify work and solve real-world problems." />
+    <meta name="author" content="Edith Karanja" />
+    <meta name="keywords" content="full-stack developer, web developer, software engineer, portfolio, Edith Karanja" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edith Karanja | Full-Stack Web Developer & Innovator</title>
+  <meta name="description" content="Professional full-stack web developer building impactful digital products that simplify work and solve real-world problems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --background: hsl(30, 30%, 98%);
+      --foreground: hsl(25, 30%, 15%);
+      --card: hsl(30, 25%, 96%);
+      --card-foreground: hsl(25, 30%, 15%);
+      --primary: hsl(25, 35%, 35%);
+      --primary-foreground: hsl(30, 30%, 98%);
+      --secondary: hsl(30, 20%, 90%);
+      --secondary-foreground: hsl(25, 30%, 20%);
+      --muted: hsl(30, 15%, 92%);
+      --muted-foreground: hsl(25, 15%, 45%);
+      --accent: hsl(25, 40%, 75%);
+      --border: hsl(30, 20%, 85%);
+      --cream: hsl(35, 40%, 95%);
+      --brown-200: hsl(30, 20%, 85%);
+      --brown-300: hsl(25, 25%, 70%);
+      --radius: 0.75rem;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--background);
+      color: var(--foreground);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(252, 251, 250, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4rem;
+    }
+    .nav-logo {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--foreground);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-logo:hover {
+      color: var(--primary);
+    }
+    .nav-links {
+      display: none;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted-foreground);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--foreground);
+    }
+    .menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--foreground);
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 280px;
+      height: 100vh;
+      background: var(--background);
+      padding: 2rem;
+      box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+      z-index: 100;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .mobile-menu.active {
+      display: flex;
+    }
+    .mobile-menu a {
+      padding: 0.75rem 0;
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--foreground);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 99;
+    }
+    .mobile-overlay.active {
+      display: block;
+    }
+    .close-btn {
+      align-self: flex-end;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--muted-foreground);
+    }
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+      .menu-btn {
+        display: none;
+      }
+    }
+    /* Hero */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--background), var(--cream), var(--secondary));
+    }
+    .hero::before,
+    .hero::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+    }
+    .hero::before {
+      top: -6rem;
+      right: -6rem;
+      width: 24rem;
+      height: 24rem;
+      background: hsla(25, 40%, 75%, 0.2);
+    }
+    .hero::after {
+      bottom: -6rem;
+      left: -6rem;
+      width: 24rem;
+      height: 24rem;
+      background: hsla(30, 20%, 85%, 0.3);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 48rem;
+      padding: 4rem 1.5rem;
+      animation: fadeIn 0.6s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--foreground);
+    }
+    .hero-subtitle {
+      margin-top: 1rem;
+      font-size: clamp(1.125rem, 3vw, 1.5rem);
+      font-weight: 500;
+      color: var(--primary);
+    }
+    .hero-description {
+      margin-top: 1.5rem;
+      font-size: 1.125rem;
+      line-height: 1.75;
+      color: var(--muted-foreground);
+      max-width: 40rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: var(--primary-foreground);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+    .btn-primary:hover {
+      background: hsl(25, 35%, 30%);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--foreground);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover {
+      background: var(--secondary);
+    }
+    .hero .btn {
+      margin-top: 2.5rem;
+    }
+    /* Sections */
+    section {
+      padding: 4rem 0;
+      scroll-margin-top: 4rem;
+    }
+    @media (min-width: 768px) {
+      section {
+        padding: 6rem 0;
+      }
+    }
+    .section-header {
+      text-align: center;
+      max-width: 48rem;
+      margin: 0 auto 3rem;
+    }
+    .section-header h2 {
+      font-size: clamp(1.875rem, 5vw, 2.25rem);
+      font-weight: 700;
+      color: var(--foreground);
+    }
+    .section-header p {
+      margin-top: 1rem;
+      font-size: 1.125rem;
+      color: var(--muted-foreground);
+    }
+    .bg-alt {
+      background: hsla(30, 20%, 90%, 0.3);
+    }
+    /* About */
+    .about-text {
+      max-width: 48rem;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+    .about-text p {
+      margin-bottom: 1rem;
+      font-size: 1.125rem;
+      color: var(--muted-foreground);
+    }
+    .highlights {
+      display: grid;
+      gap: 1.5rem;
+      max-width: 64rem;
+      margin: 0 auto;
+    }
+    @media (min-width: 640px) {
+      .highlights {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .highlights {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .highlight-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+    }
+    .highlight-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+    }
+    .highlight-icon {
+      width: 3rem;
+      height: 3rem;
+      background: var(--secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .highlight-icon svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: var(--primary);
+    }
+    .highlight-card h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--foreground);
+      margin-bottom: 0.5rem;
+    }
+    .highlight-card p {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      gap: 2rem;
+      max-width: 64rem;
+      margin: 0 auto;
+    }
+    @media (min-width: 640px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .skill-category {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s;
+    }
+    .skill-category:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .skill-category h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--foreground);
+      margin-bottom: 1rem;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .skill-tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: var(--secondary);
+      color: var(--secondary-foreground);
+      border-radius: 9999px;
+    }
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      gap: 2rem;
+      max-width: 64rem;
+      margin: 0 auto;
+    }
+    @media (min-width: 768px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+    }
+    .project-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      transform: translateY(-4px);
+    }
+    .project-header {
+      padding: 1.5rem 1.5rem 0.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .project-icon {
+      width: 3rem;
+      height: 3rem;
+      background: var(--secondary);
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .project-icon svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: var(--primary);
+    }
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--foreground);
+    }
+    .project-subtitle {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--primary);
+    }
+    .project-content {
+      padding: 0 1.5rem 1rem;
+    }
+    .project-content p {
+      color: var(--muted-foreground);
+      line-height: 1.7;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .project-tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      color: var(--muted-foreground);
+      border-radius: 9999px;
+    }
+    .project-footer {
+      padding: 0 1.5rem 1.5rem;
+    }
+    /* Contact */
+    .contact-card {
+      max-width: 32rem;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .social-link {
+      width: 2.75rem;
+      height: 2.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--secondary);
+      border-radius: 50%;
+      color: var(--muted-foreground);
+      transition: all 0.2s;
+    }
+    .social-link:hover {
+      background: var(--primary);
+      color: var(--primary-foreground);
+    }
+    .social-link svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+    .footer-text {
+      margin-top: 2rem;
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav-content">
+      <a href="#" class="nav-logo" onclick="scrollToTop(event)">Edith Karanja</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" id="overlay" onclick="toggleMenu()"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-btn" onclick="toggleMenu()">&times;</button>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#skills" onclick="toggleMenu()">Skills</a>
+    <a href="#projects" onclick="toggleMenu()">Projects</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Edith Karanja</h1>
+      <p class="hero-subtitle">Professional Full-Stack Web Developer & Innovator</p>
+      <p class="hero-description">
+        I'm a professional full-stack web developer with a strong passion for web and mobile development. 
+        As an innovator, I build digital products that simplify work and solve real-world pain points. 
+        I focus on creating impactful, user-centered solutions through technology.
+      </p>
+      <a href="#projects" class="btn btn-primary">
+        View My Projects
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M8 3v10M4 9l4 4 4-4"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2>About Me</h2>
+      </div>
+      <div class="about-text">
+        <p>
+          I'm passionate about leveraging technology to create meaningful impact. 
+          With expertise in both frontend and backend development, I specialize in 
+          building scalable applications that address genuine needs and empower users 
+          to achieve more.
+        </p>
+        <p>
+          My approach combines technical excellence with a deep understanding of 
+          user needs, ensuring that every product I build is not only functional 
+          but also intuitive and enjoyable to use.
+        </p>
+      </div>
+      <div class="highlights">
+        <div class="highlight-card">
+          <div class="highlight-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+            </svg>
+          </div>
+          <h3>Full-Stack Development</h3>
+          <p>Building complete web and mobile solutions from frontend to backend with modern technologies.</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3>Innovation Focused</h3>
+          <p>Creating digital products that solve real-world problems and simplify everyday workflows.</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <h3>User-Centered Design</h3>
+          <p>Prioritizing user experience to deliver intuitive and impactful solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Skills -->
+  <section id="skills" class="bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Skills & Technologies</h2>
+        <p>A comprehensive toolkit for building modern, scalable applications.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Frontend</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">Tailwind CSS</span>
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Soft Skills</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Team Collaboration</span>
+            <span class="skill-tag">Communication</span>
+            <span class="skill-tag">Agile/Scrum</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <p>Impactful solutions that address real-world challenges.</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="project-title">WaziHub</h3>
+              <p class="project-subtitle">Civic Tech Platform</p>
+            </div>
+          </div>
+          <div class="project-content">
+            <p>
+              WaziHub is a civic tech platform designed to promote transparency and accountability 
+              by making government budgets, public contracts, and development projects accessible 
+              and easy to understand for citizens.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Civic Tech</span>
+              <span class="project-tag">Open Data</span>
+              <span class="project-tag">Transparency</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <a href="#" class="btn btn-outline">
+              View Project
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7v10"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="project-title">BizPlus</h3>
+              <p class="project-subtitle">Business Management Platform</p>
+            </div>
+          </div>
+          <div class="project-content">
+            <p>
+              BizPlus is a smart business management platform that helps entrepreneurs streamline 
+              operations, improve productivity, and manage key business processes through simple 
+              and intuitive digital tools.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Business</span>
+              <span class="project-tag">Productivity</span>
+              <span class="project-tag">SaaS</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <a href="#" class="btn btn-outline">
+              View Project
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7v10"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact -->
+  <section id="contact" class="bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Let's Connect</h2>
+        <p>Interested in working together or have a project in mind? I'd love to hear from you.</p>
+      </div>
+      <div class="contact-card">
+        <a href="mailto:hello@edithkaranja.com" class="btn btn-primary">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <path d="M22 6l-10 7L2 6"/>
+          </svg>
+          Get In Touch
+        </a>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <p class="footer-text">© 2026 Edith Karanja. All rights reserved.</p>
+    </div>
+  </section>
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+      document.getElementById('overlay').classList.toggle('active');
+    }
+    function scrollToTop(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
